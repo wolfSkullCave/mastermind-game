@@ -25,22 +25,29 @@ class PlayGame < SetUpGame
     self.guess = gets.chomp.to_s.chars.map(&:to_i)
   end
 
-
-  def equality?(code, guess)
+  def equality?
     # checks if arrays are the same and in the same order
-    code == guess
+    self.code == self.guess
   end
   
-  def unordered_compare?(code, guess)
+  def unordered_compare?
     # checks if the arrays are the same regardless of the order
-    code.sort == guess.sort
+    self.code.sort == self.guess.sort
   end
   
-  def common_compare(code, guess)
+  def common_compare
     # find common elements in the 2 arrays
-    code & guess
+    self.code & self.guess
   end
 
   
+  def play
+    get_code
+    # compare the guess to the code and return a new 
+    # array containing c if their is a correct guess in
+    # the wrong position and C if their is a correct
+    # guess in the correct position
+
+  end
 end
 
