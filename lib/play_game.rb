@@ -12,19 +12,33 @@ class SetUpGame
   end
 end
 
+
 class PlayGame < SetUpGame
-  attr_accessor :c, :C
+  attr_accessor :c, :C, :guess
 
   def initialize
     super
   end
 
-  def game_loop
-
+  def get_code
+    print "Guess the code: "
+    self.guess = gets.chomp.to_s.chars.map(&:to_i)
   end
 
-  def check_guess?(guess)
-   
+
+  def equality?(code, guess)
+    # checks if arrays are the same and in the same order
+    code == guess
+  end
+  
+  def unordered_compare?(code, guess)
+    # checks if the arrays are the same regardless of the order
+    code.sort == guess.sort
+  end
+  
+  def common_compare(code, guess)
+    # find common elements in the 2 arrays
+    code & guess
   end
 
   
