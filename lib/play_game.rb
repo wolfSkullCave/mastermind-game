@@ -48,6 +48,13 @@ class PlayGame < SetUpGame
     # the wrong position and C if their is a correct
     # guess in the correct position
 
+    feedback = Array.new
+
+    # Checking for digits in correct positions
+    puts self.guess == self.code
+
   end
+
+  
 end
 
