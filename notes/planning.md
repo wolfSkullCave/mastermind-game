@@ -31,3 +31,10 @@ Play Game
 4. check if input contains any correct digits
 5. return an out put matching the amount and position of the correct digits if any. eg c-C
 6. Next iteration of loop
+
+
+if guess[0] == code[0]
+    return c
+
+if guess[0] == code[any]
+    return ce    
