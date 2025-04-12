@@ -19,10 +19,26 @@ module SetUp
     arr1.sort == arr2.sort
   end
 
-  def common_compare(arr1, arr2)
+  def matching_values(arr1, arr2)
     # find common elements in the 2 arrays
-    arr1 & arr2
+    commom_elements = []
+    # commom_elements.push(arr1 & arr2)
+    arr1.each do |value|
+      commom_elements.push(arr2.find { |element| element == value })
+    end
+
+    return commom_elements
   end
 
-  
+  def matching_indexes(arr1, arr2)
+    # checks if any values of arr1 match any values of arr2
+    # and then returns the indexes of the matching values.
+    matching_indexes = []
+    arr1.each_with_index do |item, index|
+      if item == arr2[index]
+        matching_indexes.push(index)
+      end
+    end
+    return matching_indexes
+  end
 end

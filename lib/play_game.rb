@@ -10,22 +10,10 @@ class PlayGame
     @feedback = []
   end
 
-  def x
-    
+  def get_feedback
+    matching_indexes(guess, code).each { feedback.push("vc") }
+    matching_values(guess, code).each { feedback.push("c") }
+    feedback.shuffle
   end
 
-  def y
-    matching_values = []
-
-    # itterate through both arrays simultaneously
-    self.code.each_with_index do |value, index|
-      if value == self.guess[index]
-        matching_values << index
-        matching_values << value
-        return 'y'
-      end
-    end
-    return matching_values
-  end
 end
- 
