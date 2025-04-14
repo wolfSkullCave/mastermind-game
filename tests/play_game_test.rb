@@ -1,10 +1,11 @@
 require_relative '../lib/play_game'
 
-test = PlayGame.new
-test.guess[0] = test.code[0]
+mastermind = PlayGame.new
+# mastermind.guess[0] = mastermind.code[0]
 
-puts "Code: #{test.code}"
-puts "Guess: #{test.guess}"
+puts "Code: #{mastermind.code}"
+puts "Guess: #{mastermind.guess}"
 
-puts "matching values: #{test.matching_values(test.guess, test.code)}"
-puts "matching indexes: #{test.matching_indexes(test.guess, test.code)}"
+puts "matching values: #{mastermind.matching_values(mastermind.guess, mastermind.code)}"
+
+puts "code: #{mastermind.feedback}"

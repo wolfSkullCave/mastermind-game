@@ -1,3 +1,15 @@
+# The SetUp module provides utility methods for setting up and managing the
+# logic of the Mastermind game. It includes methods for generating a random
+# code, comparing arrays for equality, finding common elements, and identifying
+# matching values or indexes between two arrays.
+#
+# Methods:
+# - generate_code: Generates a random 4-digit code with unique numbers between 1 and 8.
+# - equality?(arr1, arr2): Checks if two arrays are identical in both content and order.
+# - unordered_compare?(arr1, arr2): Checks if two arrays contain the same elements, regardless of order.
+# - matching_values(arr1, arr2): Finds and returns the common elements between two arrays.
+# - matching_indexes(arr1, arr2): Compares two arrays and returns an array indicating
+#   whether values match at the same index ('vc') or exist elsewhere in the second array ('c').
 module SetUp
   def generate_code
     prng = Random.new
@@ -23,11 +35,11 @@ module SetUp
     # find common elements in the 2 arrays
     commom_elements = []
     # commom_elements.push(arr1 & arr2)
-    arr1.each do |value|
+    arr1.map do |value|
       commom_elements.push(arr2.find { |element| element == value })
     end
 
-    return commom_elements
+    commom_elements
   end
 
   def matching_indexes(arr1, arr2)
@@ -36,9 +48,12 @@ module SetUp
     matching_indexes = []
     arr1.each_with_index do |item, index|
       if item == arr2[index]
-        matching_indexes.push(index)
+        matching_indexes.push('vc')
+      elsif arr2.find { |v| v == item }
+        matching_indexes.push('c')
       end
     end
-    return matching_indexes
+
+    matching_indexes
   end
 end
