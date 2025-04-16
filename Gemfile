@@ -1,5 +1,7 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # gem "rails"
 
-gem 'rubocop', '~> 1.75'
+gem "rubocop", "~> 1.75"
+
+gem "colorize", "~> 1.1"

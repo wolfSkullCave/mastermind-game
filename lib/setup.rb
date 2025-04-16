@@ -21,6 +21,16 @@ module SetUp
     code
   end
 
+  def generate_code_words
+    possible_values = %w[red blue green yellow orange purple black white]
+    code = []
+    while code.size < 4
+      random_value = possible_values.sample
+      code << random_value unless code.include?(random_value)
+    end
+    code
+  end
+
   def equality?(arr1, arr2)
     # checks if arrays are the same and in the same order
     arr1 == arr2
@@ -48,9 +58,9 @@ module SetUp
     matching_indexes = []
     arr1.each_with_index do |item, index|
       if item == arr2[index]
-        matching_indexes.push('vc')
+        matching_indexes.push("vc")
       elsif arr2.find { |v| v == item }
-        matching_indexes.push('c')
+        matching_indexes.push("c")
       end
     end
 

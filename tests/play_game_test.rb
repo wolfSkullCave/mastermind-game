@@ -1,4 +1,4 @@
-require_relative '../lib/play_game'
+require_relative "../lib/play_game"
 
 mastermind = PlayGame.new
 # mastermind.guess[0] = mastermind.code[0]
