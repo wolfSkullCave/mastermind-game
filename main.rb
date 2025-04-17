@@ -12,4 +12,5 @@ puts "   - A white peg means you have a correct color but in the wrong position.
 puts "4. Use the feedback to refine your guesses and crack the code!"
 puts "Good luck!"
 puts "----------------------------------------------------"
+
 mastermind.play_logic
